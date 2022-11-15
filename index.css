@@ -1,0 +1,163 @@
+/*manto inicial*/
+*{
+    margin: 0;
+    padding: 0;
+    background-color:#F5B7B1;
+
+}
+/*titulo del blog y fondo*/
+#titlebox{
+    display:flex;
+    flex-direction: column;
+    padding: 5rem;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+    text-align: center;
+}
+
+/*sección de filtros*/
+#filterbox{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    margin: 1rem auto;
+    padding: 1rem;
+    max-width: 50rem;
+    justify-content:center;
+
+    border-radius: 20px;
+    background: #F5B7B1;
+    box-shadow:  9px 9px 21px #d09c96,
+                 -9px -9px 21px #ffd2cc;
+}
+/*barra de filter*/
+#filter{
+    width:35rem ;
+    max-width: 35rem auto;
+    border-radius: 20px;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: inset 9px 9px 21px #d6d6d6,
+            inset -9px -9px 21px #ffffff;;
+  }
+/* boton de filter*/
+#filterbtn{
+    margin-left: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    width: 5rem;
+    max-width: auto  ;
+    border-radius: 20px;
+background: linear-gradient(145deg, #ffc4bd, #dda59f);
+box-shadow:  6px 6px 12px #ce9a95,
+             -6px -6px 12px #ffd4cd;
+}
+/*container de los flexbox*/
+#container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: center;
+    text-align: center;
+    margin: 0.25rem;
+}
+/*container del primer flexbox formulario de adicion */
+#addform{ 
+    margin: 0.25rem;
+    padding: 1rem;
+    order: 0;
+    flex: 4 1 auto;
+    align-self: flex-start;
+    background-color: blueviolet;
+    max-width: 30%;
+}
+/*formulario de segundo flexbox tarjetas de recetas*/
+#recype-list{
+    margin: 0.25rem;
+    padding: 1rem;
+    order: 1;
+    flex: 4 3 auto;
+    align-self: flex-start;
+    background-color: brown;
+    max-width: 70%;
+}
+/*tarjeta dentro de primer flexbox*/
+#addform-box{
+    display:flex;
+    flex-direction: column;
+    margin: 0.25rem;
+    align-items: center;
+}
+/*items del formulario para agregar tarjetas*/
+#addform-box .form-item{
+    min-width: 10rem;
+    width: 25rem;
+    margin: 0.25rem;
+
+}
+#addform-box button{
+    width: 10rem;
+    margin: 0.25rem;
+
+}
+/*oden de la tarjeta de post*/
+.recype-post{
+    background-color: aqua;
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: 2fr 4fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5 px;
+    grid-template-areas: 
+    "img titl typ dif btndisp"
+    "img des des des btnerase"; 
+    justify-items:stretch;
+    align-items: center;
+}
+
+.marcoimg {grid-area:img;}
+.card-title { grid-area:titl;}
+.card-type { grid-area:typ;}
+.card-diffidculty { grid-area:dif;}
+.card-description { grid-area:des;}
+.card-disp-btn { grid-area:btndisp;}
+.card-era-btn { grid-area:btnerase ;}
+
+.marcoimg{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    margin: 10px;
+    position: relative;
+    border-radius: 50%;
+}
+.card-img{
+    position:absolute;
+    left: -100%;
+    right: -100%;
+    top: -100%;
+    bottom: -100%;
+    margin: auto;
+    max-height: 150%;
+    max-width: 150%;
+    
+}
+
+.recype-post > .card-item > p{
+    background-color: red;
+    padding: 1rem;
+    border-radius: 20px;
+
+}
+
+/*.recype-post p{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    text-align: center;
+    vertical-align: middle;
+}
+

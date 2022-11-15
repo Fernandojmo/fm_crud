@@ -4,9 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <title>La receta magistral</title>
 </head>
 <body>
-    <h1>hola mundo</h1>
+    <header> 
+        <div id="titlebox">
+            <h1>La receta magistral</h1>
+            <h3>Blog de recetas deliciosas</h3>
+        </div>
+    </header>
+        <div id="filterbox">
+            <input id="filter" type="text" name="filter" placeholder="Filter">
+            <button id="filterbtn">Filter</button>
+        </div>
+    <div id="container">
+        <div id="addform">
+            <form id="addform-box">
+                <h4>Agrega tu receta aqui</h4>
+                <input class="form-item form-item-title" type="text" name="title" placeholder="Titulo" id="title">
+                <input class="form-item form-item-type" type="text" name="type" placeholder="Tipo de receta" id="type">
+                <input class="form-item form-item-difficulty" type="text" name="difficulty" placeholder="Dificultad" id="difficulty">
+                <input class="form-item form-item-description" type="text" name="description" placeholder="Descripción" id="description">
+                <input class="form-item form-item-recype" type="text" name="recype" placeholder="Receta" id="recype-content">
+                <input class="form-item form-item-image" type="file" name="image" id="image" accept="image/*">
+                <button>Summit</button>
+            </form>
+        </div>
+        <div id="recype-list">
+            <div class="recype-post">
+                <div class="card-item marcoimg "><img class="card-img" src="./assets/images/muffin.jpg" alt="post-image"></div>
+                <div class="card-item card-title"><p>Muffin choco chips</p></div>
+                <div class="card-item card-description"><p>Muffin de vainilla con chispas de chocolate</p></div>
+                <div class="card-item card-type"><p>Postre</p></div>
+                <div class="card-item card-diffidculty"><p>Facil</p></div>
+                <div class="card-item card-disp-btn"><button>Display recype</button></div>
+                <div class="card-item card-era-btn"><button>Erase recype</button></div>
+            </div>
+            <div class="recype-post">
+                <div class="card-item marcoimg "><img class="card-img" src="./assets/images/muffin2.jpg" alt="post-image"></div>
+                <div class="card-item card-title"><p>Muffin choco chips</p></div>
+                <div class="card-item card-description"><p>Muffin vainilla cream</p></div>
+                <div class="card-item card-type"><p>Postre</p></div>
+                <div class="card-item card-diffidculty"><p>Facil</p></div>
+                <div class="card-item card-disp-btn"><button>Display recype</button></div>
+                <div class="card-item card-era-btn"><button>Erase recype</button></div>
+            </div>
+            <div class="recype-post">
+                <div class="card-item marcoimg "><img class="card-img" src="./assets/images/muffin3.jpg" alt="post-image"></div>
+                <div class="card-item card-title"><p>Muffin choco chips</p></div>
+                <div class="card-item card-description"><p>Muffin arandanos</p></div>
+                <div class="card-item card-type"><p>Postre</p></div>
+                <div class="card-item card-diffidculty"><p>Facil</p></div>
+                <div class="card-item card-disp-btn"><button>Display recype</button></div>
+                <div class="card-item card-era-btn"><button>Erase recype</button></div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <div id="box">
+
+        </div>
+    </footer>
+    <script src="./index.js"></script>
 </body>
 </html>
