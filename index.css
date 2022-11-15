@@ -18,7 +18,7 @@
 }
 #titlebox h1{
     border-radius: 20px;
-    padding: 1rem;
+    padding: 2rem;
     background-color:white;
     font-family: 'Fredoka One', cursive;
 }
@@ -28,9 +28,8 @@
     padding: 0.75rem;
     background-color:white;
     font-family: 'Caveat', cursive;
-    font-size:medium;
+    font-size:larger;
 }
-
 
 /*sección de filtros*/
 #filterbox{
@@ -66,11 +65,19 @@
     width: 5rem;
     max-width: auto  ;
     border-radius: 20px;
-    border: #F5B7B1;
-
+    cursor: pointer;
+    border: #ce9a95;
     background: linear-gradient(145deg, #ffc4bd, #dda59f);
     box-shadow:  6px 6px 12px #ce9a95,
                 -6px -6px 12px #ffd4cd;
+}
+
+#filterbtn:hover{
+    background: linear-gradient(145deg, #F1948A, #dda59f);
+}
+#filterbtn:active{
+    transform: translatey(2px);
+    background: linear-gradient(145deg, #F1948A, #dda59f);
 }
 /*container de los flexbox*/
 #container{
@@ -171,12 +178,5 @@
     padding: 1rem;
     border-radius: 20px;
 
-}
-
-/*.recype-post p{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: bolder;
-    text-align: center;
-    vertical-align: middle;
 }
 
