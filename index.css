@@ -16,12 +16,14 @@
     background-image: url("/assets/images/patternpad4.png");
 
 }
+/*texto del titulo*/
 #titlebox h1{
     border-radius: 20px;
     padding: 2rem;
     background-color:white;
     font-family: 'Fredoka One', cursive;
 }
+/*texto de subtitulo*/
 #titlebox h3{
     border-radius: 20px;
     margin: 0.25rem;
@@ -71,10 +73,11 @@
     box-shadow:  6px 6px 12px #ce9a95,
                 -6px -6px 12px #ffd4cd;
 }
-
+/* accion de poner el puntero sobre el boton*/
 #filterbtn:hover{
     background: linear-gradient(145deg, #F1948A, #dda59f);
 }
+/* accion de hacer click sobre el boton*/
 #filterbtn:active{
     transform: translatey(2px);
     background: linear-gradient(145deg, #F1948A, #dda59f);
@@ -97,7 +100,6 @@
     order: 0;
     flex: 4 1 auto;
     align-self: flex-start;
-    background-color: blueviolet;
     max-width: 30%;
 }
 /*formulario de segundo flexbox tarjetas de recetas*/
@@ -107,32 +109,36 @@
     order: 1;
     flex: 4 3 auto;
     align-self: flex-start;
-    background-color: brown;
     max-width: 70%;
 }
-/*tarjeta dentro de primer flexbox*/
+/*formulario para agregar nuevos elementos dentro de primer flexbox*/
 #addform-box{
     display:flex;
     flex-direction: column;
     margin: 0.25rem;
     align-items: center;
+    min-width: fit-content;
+
+    border-radius: 20px;
+    background: #F5B7B1;
+    box-shadow:  9px 9px 21px #d09c96,
+                 -9px -9px 21px #ffd2cc;
 }
 /*items del formulario para agregar tarjetas*/
 #addform-box .form-item{
-    min-width: 10rem;
-    width: 25rem;
+    width: auto;
+    width: 20rem;
     margin: 0.25rem;
 
 }
 #addform-box button{
     width: 10rem;
     margin: 0.25rem;
-
 }
 /*oden de la tarjeta de post*/
 .recype-post{
-    background-color: aqua;
-    margin: 1rem;
+    margin: 0.25rem;
+    margin-bottom: 2.75rem;
     display: grid;
     grid-template-columns: 2fr 4fr 1fr 1fr 1fr;
     grid-template-rows: repeat(2, 1fr);
@@ -143,6 +149,11 @@
     "img des des des btnerase"; 
     justify-items:stretch;
     align-items: center;
+
+    border-radius: 20px;
+    background: #F5B7B1;
+    box-shadow:  9px 9px 21px #d09c96,
+                 -9px -9px 21px #ffd2cc;
 }
 
 .marcoimg {grid-area:img;}
@@ -180,3 +191,15 @@
 
 }
 
+@media screen and (max-width:1120px){
+    #container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: flex-start;
+        align-items: center;
+        text-align: center;
+        margin: 0.25rem;
+    }
+}
