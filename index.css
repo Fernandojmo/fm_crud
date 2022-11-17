@@ -37,7 +37,7 @@
 #filterbox{
     display: flex;
     flex-direction: row;
-    margin: 1rem auto;
+    margin: 2rem auto;
     padding: 1rem;
     max-width: 50rem;
     justify-content:center;
@@ -51,7 +51,8 @@
 #filter{
     width:35rem ;
     max-width: 35rem auto;
-    border-radius: 20px;
+
+
     border-radius: 20px;
     border: none;
     padding: 0.5rem;
@@ -66,6 +67,8 @@
     padding-right: 0.5rem;
     width: 5rem;
     max-width: auto  ;
+    font-family: 'Fredoka One', cursive;
+
     border-radius: 20px;
     cursor: pointer;
     border: #ce9a95;
@@ -116,34 +119,73 @@
     display:flex;
     flex-direction: column;
     margin: 0.25rem;
+    padding: 0.5rem;
     align-items: center;
-    min-width: fit-content;
-
+    flex-wrap: wrap;
+    
     border-radius: 20px;
     background: #F5B7B1;
     box-shadow:  9px 9px 21px #d09c96,
                  -9px -9px 21px #ffd2cc;
 }
+
 /*items del formulario para agregar tarjetas*/
 #addform-box .form-item{
-    width: auto;
-    width: 20rem;
-    margin: 0.25rem;
+    width: 18rem;
+    margin: 0.5rem;
+    /* justify-self: stretch; */
+
+    border-radius: 20px;
+    border: none;
+    padding: 0.5rem;
+    background: #ffffff;
+    box-shadow: inset 9px 9px 21px #d6d6d6,
+                inset -9px -9px 21px #ffffff;;
 
 }
+
+/*estilo para el boton del formulario de agregar receta*/
 #addform-box button{
-    width: 10rem;
+    width: auto;
+    min-width: 10rem;
+    padding: 0.5rem;
     margin: 0.25rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Fredoka One', cursive;
+    
+    border-radius: 20px;
+    cursor: pointer;
+    border: #ce9a95;
+    background: linear-gradient(145deg, #ffc4bd, #dda59f);
+    box-shadow:  6px 6px 12px #ce9a95,
+                -6px -6px 12px #ffd4cd;
+}
+#addform-box h4{
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+
+    font-family: 'Fredoka One', cursive;
+}
+/* accion de poner el puntero sobre el boton del formulario para agregar recetas*/
+#addform-box button:hover{
+    background: linear-gradient(145deg, #F1948A, #dda59f);
+}
+/* accion de hacer click sobre el boton del formulario para agregar recetas*/
+#addform-box button:active{
+    transform: translatey(2px);
+    background: linear-gradient(145deg, #F1948A, #dda59f);
 }
 /*oden de la tarjeta de post*/
 .recype-post{
+    padding: 1rem;
     margin: 0.25rem;
     margin-bottom: 2.75rem;
     display: grid;
     grid-template-columns: 2fr 4fr 1fr 1fr 1fr;
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 5px;
-    grid-row-gap: 5 px;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
     grid-template-areas: 
     "img titl typ dif btndisp"
     "img des des des btnerase"; 
@@ -165,12 +207,14 @@
 .card-era-btn { grid-area:btnerase ;}
 
 .marcoimg{
+    justify-self: center;
     width: 100px;
     height: 100px;
     overflow: hidden;
     margin: 10px;
     position: relative;
     border-radius: 50%;
+    
 }
 .card-img{
     position:absolute;
@@ -185,21 +229,90 @@
 }
 
 .recype-post > .card-item > p{
-    background-color: red;
     padding: 1rem;
-    border-radius: 20px;
-
+    font-family: 'Caveat', cursive;
+    font-weight: bold;
+    font-size:larger;
+    border-radius: 40px;
+    background: #F5B7B1;
+    box-shadow: inset 9px 9px 10px #d09c96,
+                inset -9px -9px 10px #ffd2cc;
 }
 
-@media screen and (max-width:1120px){
+.recype-post > .card-title > p{
+    font-family: 'Fredoka One', cursive;
+}
+
+.recype-post .card-btn{
+    padding: 0.75rem;
+    font-family: 'Fredoka One', cursive;
+    border-radius: 20px;
+    cursor: pointer;
+    border: #ce9a95;
+    background: linear-gradient(145deg, #ffc4bd, #dda59f);
+    box-shadow:  6px 6px 12px #ce9a95,
+                -6px -6px 12px #ffd4cd
+}
+
+/* accion al poner el puntero sobre el boton de la tarjeta*/
+.card-btn:hover{
+    background: linear-gradient(145deg, #F1948A, #dda59f);
+}
+/* accion de hacer click sobre el boton de la tarjeta*/
+.card-btn:active{
+    transform: translatey(2px);
+    background: linear-gradient(145deg, #F1948A, #dda59f);
+}
+
+@media screen and (max-width:1200px){
     #container{
         display: flex;
         flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-content: flex-start;
-        align-items: center;
-        text-align: center;
         margin: 0.25rem;
     }
+    
+    #container #addform{
+        align-self: stretch;
+        max-width: 100%;
+        padding: 2rem;
+    }
+    #addform-box{
+        display: grid;
+        grid-template-columns: 1fr;
+        }
+    #addform-box .form-item{
+        width:auto;
+    }
+    #summitaddform{
+        width: fit-content;
+    }
+
+    #container #recype-list{
+        max-width: 100%;
+        align-self: stretch;
+    }
+    .recype-post{
+        padding: 1rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(6, 1fr);
+            grid-column-gap: 2px;
+            grid-row-gap: 2px;
+            grid-template-areas:
+            "img img"
+            "img img"
+            "titl titl"
+            "typ dif"
+            "des des"
+            "btndisp btnerase";
+            }
+            
+            .compimg {grid-area:img;}
+            .card-title { grid-area:titl;}
+            .card-type { grid-area:typ;}
+            .card-diffidculty { grid-area:dif;}
+            .card-description { grid-area:des;}
+            .card-disp-btn { grid-area:btndisp;}
+            .card-era-btn { grid-area:btnerase;}
+   
 }
