@@ -16,6 +16,32 @@
     background-image: url("./assets/images/patternpad4.png");
 
 }
+/*titulo del blog y fondo*/
+#footerbox{
+    display:flex;
+    flex-direction: column;
+    padding: 5rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url("./assets/images/patternpad4.png");
+
+}
+#footerbox h3{
+    border-radius: 20px;
+    margin: 0.5;
+    padding: 0.75rem;
+    background-color:white;
+    font-family: 'Fredoka One', cursive;
+}
+#footerbox p{
+    border-radius: 20px;
+    margin: 0.25rem;
+    padding: 0.75rem;
+    background-color:white;
+    font-family: 'Caveat', cursive;
+    font-size:larger;
+}
 /*texto del titulo*/
 #titlebox h1{
     border-radius: 20px;
@@ -289,7 +315,7 @@
         width:auto;
     }
     #summitaddform{
-                width: -moz-fit-content;
+        width: -moz-fit-content;
         width: fit-content;
     }
 
