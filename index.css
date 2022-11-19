@@ -263,8 +263,13 @@
     transform: translatey(2px);
     background: linear-gradient(145deg, #F1948A, #dda59f);
 }
-
 @media screen and (max-width:1200px){
+    #addform-box .form-item{
+        width:10rem;
+    }
+}
+
+@media screen and (max-width:900px){
     #container{
         display: flex;
         flex-direction: column;
