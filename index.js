@@ -11,6 +11,15 @@
 // ]
 
 // 
+function cargarls(){
+    if (JSON.parse(localStorage.getItem("codigo"))===null && JSON.parse(localStorage.getItem("items"))===null){
+        const Codigo = 0
+        localStorage.setItem("codigo", JSON.stringify(Codigo))
+        const Items =[]
+        localStorage.setItem("items", JSON.stringify(Items))
+    }
+}
+cargarls()
 
 const Items = JSON.parse(localStorage.getItem("items"))
 
@@ -24,6 +33,8 @@ function asignarcodigo(Codigo){
     localStorage.setItem("codigo", JSON.stringify(Codigo))
     return Codigo
 }
+
+
 
 
 pintarItems(Items)
@@ -97,38 +108,6 @@ function pintarItems(product) {
 
   console.log(Items)
 
-
-
-
-
-
-
-
-
-
-
-
-
-// const btnerase = document.getElementById(".erasebtn")
-
-// btnerase.addEventListener("click", (e) => {
-//     e.preventDefault()
-//     const productos = Items.filter((Item) => {
-//       return Item.title.toLowerCase().includes(inputSearch.value.toLowerCase())
-//     })
-  
-//     pintarItems(Items)
-//   })
-
-
-
-
-
-
-// let nombreaborrar = "Informatica1"
-
-// console.log (nombreaborrar)
-
 function borrarelemento (cod){
     for (let i =0; i<Items.length; i++){
         if(cod===Items[i].cod){
@@ -140,11 +119,6 @@ function borrarelemento (cod){
     }
  
 }
-// borrarelemento(nombreaborrar)
-// console.log(Items)
-
-
-
 
 const btnSearch = document.getElementById("filterbtn")
 const inputSearch = document.querySelector("#filter")
@@ -157,6 +131,20 @@ btnSearch.addEventListener("click", (e) => {
 
   pintarItems(productos)
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
