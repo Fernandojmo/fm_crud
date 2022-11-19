@@ -1,10 +1,36 @@
 
 function cargarls(){
     if (JSON.parse(localStorage.getItem("codigo"))===null && JSON.parse(localStorage.getItem("items"))===null){
-        const Codigo = 0
+        const Codigo = 3
         localStorage.setItem("codigo", JSON.stringify(Codigo))
-        const Items =[]
-        localStorage.setItem("items", JSON.stringify(Items))
+        const inicialItems =[
+            {   title: "Muffin chips de chocolate",
+                type: "Postre",
+                difficulty: "Fácil",
+                description: "Muffin de vainillas con chips de chocolate",
+                recypecontent: "",
+                image: "https://images.unsplash.com/photo-1599394922679-1214f9ee16e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+                cod: 0,
+            },
+            {   title: "Muffin relleno de chocolate",
+                type: "Postre",
+                difficulty: "Fácil",
+                description: "muffin relleno con crema de chocolate",
+                recypecontent: "",
+                image: "https://images.unsplash.com/photo-1609271873730-ed73bb15b9a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+                cod: 1,
+            },
+            {
+                title: "Muffin de arandanos",
+                type: "Postre",
+                difficulty: "Fácil",
+                description: "muffin relleno con arandanos",
+                recypecontent: "",
+                image: "https://images.unsplash.com/photo-1558303420-f814d8a590f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1965&q=80",
+                cod: 2,
+            },
+        ]
+        localStorage.setItem("items", JSON.stringify(inicialItems))
     }
 }
 cargarls()
