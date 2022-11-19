@@ -10,13 +10,20 @@
 //     },
 // ]
 
-// onclick="borrarelemento(${product.cod})"
+// 
 
 const Items = JSON.parse(localStorage.getItem("items"))
 
 const listaArticulos = document.getElementById("recype-list")
 
+const Codigo = JSON.parse(localStorage.getItem("codigo"))
 
+function asignarcodigo(Codigo){
+    Codigo=Codigo+1
+    console.log(Codigo)
+    localStorage.setItem("codigo", JSON.stringify(Codigo))
+    return Codigo
+}
 
 
 
@@ -31,8 +38,8 @@ function pintarItem(product) {
                     <div class="card-item card-description"><p>${product.description}</p></div>
                     <div class="card-item card-type"><p>${product.type}</p></div>
                     <div class="card-item card-diffidculty"><p>${product.difficulty}</p></div>
-                    <div class="card-item card-disp-btn"><button class="card-btn editbtn">Editar receta</button></div>
-                    <div class="card-item card-era-btn"><button class="card-btn erasebtn">Borrar receta</button></div>
+                    <div class="card-item card-disp-btn"><button  class="card-btn editbtn">Editar receta</button></div>
+                    <div class="card-item card-era-btn"><button onclick="borrarelemento(${product.cod})" class="card-btn erasebtn">Borrar receta</button></div>
                     `
 
   listaArticulos.appendChild(card)
@@ -74,12 +81,9 @@ function pintarItems(product) {
       description: descriptionInput.value,
       recypecontent: recypecontentInput.value,
       image: imageInput,
-      cod: contadorcodigo 
+      cod: asignarcodigo(Codigo)
     })
     
-    contadorcodigo = contadorcodigo + 1
-
-    localStorage.setItem("contador", JSON.stringify(contadorcodigo))
 
     titleInput.value="" 
     typeInput.value="" 
@@ -93,7 +97,14 @@ function pintarItems(product) {
   })
 
   console.log(Items)
-  console.log(contadorcodigo)
+
+
+
+
+
+
+
+
 
 
 
@@ -119,17 +130,17 @@ function pintarItems(product) {
 
 // console.log (nombreaborrar)
 
-// function borrarelemento (nombreaborrar){
-//     for (let i =0; i<Items.length; i++){
-//         if(nombreaborrar===Items[i].title){
-//             Items.splice(i,1)
-//             pintarItems(Items)
-//             localStorage.setItem("items", JSON.stringify(Items))
-//             return
-//         }
-//     }
+function borrarelemento (cod){
+    for (let i =0; i<Items.length; i++){
+        if(cod===Items[i].cod){
+            Items.splice(i,1)
+            pintarItems(Items)
+            localStorage.setItem("items", JSON.stringify(Items))
+            return
+        }
+    }
  
-// }
+}
 // borrarelemento(nombreaborrar)
 // console.log(Items)
 
