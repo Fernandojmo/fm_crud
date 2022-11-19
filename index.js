@@ -34,7 +34,7 @@ function pintaraddform(){
                     <input class="form-item form-item-difficulty" type="text" name="difficulty" placeholder="Dificultad" id="difficulty">
                     <input class="form-item form-item-description" type="text" name="description" placeholder="Descripción" id="description">
                     <input class="form-item form-item-recype" type="text" name="recype" placeholder="Receta" id="recype-content">
-                    <input class="form-item form-item-image" type="file" name="image" placeholder="Imagen" id="image" accept="image/*">
+                    <input class="form-item form-item-image" type="text" name="image" placeholder="Link imagen" id="image" accept="image/*">
                     <button id="summitaddform"onclick>Subir</button>`
     addForm.appendChild(form)
 }
@@ -96,7 +96,7 @@ function pintarItems(product) {
       difficulty: difficultyInput.value,
       description: descriptionInput.value,
       recypecontent: recypecontentInput.value,
-      image: imageInput,
+      image: imageInput.value,
       cod: asignarcodigo()
     })
     
@@ -147,12 +147,12 @@ function editarelemento(cod){
             form2.setAttribute("id","addform-box")
             form2.innerHTML=`
                 <h4 class="form-item-h4">Edita tu receta aqui</h4>
-                <input class="form-item form-item-title" type="text" name="title" placeholder="${Items[i].title}" id="edittitle">
-                <input class="form-item form-item-type" type="text" name="type" placeholder="${Items[i].type}" id="edittype">
-                <input class="form-item form-item-difficulty" type="text" name="difficulty" placeholder="${Items[i].difficulty}" id="editdifficulty">
-                <input class="form-item form-item-description" type="text" name="description" placeholder="${Items[i].description}" id="editdescription">
-                <input class="form-item form-item-recype" type="text" name="recype" placeholder="${Items[i].recypecontent}" id="editrecype-content">
-                <input class="form-item form-item-image" type="file" name="image" placeholder="${Items[i].image}" id="editimage" accept="image/*">
+                <input class="form-item form-item-title" type="text" name="title" value="${Items[i].title}" placeholder="${Items[i].title}" id="edittitle">
+                <input class="form-item form-item-type" type="text" name="type" value="${Items[i].type}" placeholder="${Items[i].type}" id="edittype">
+                <input class="form-item form-item-difficulty" type="text" name="difficulty" value="${Items[i].difficulty}" placeholder="${Items[i].difficulty}" id="editdifficulty">
+                <input class="form-item form-item-description" type="text" name="description" value="${Items[i].description}" placeholder="${Items[i].description}" id="editdescription">
+                <input class="form-item form-item-recype" type="text" name="recype" value="${Items[i].recypecontent}" placeholder="${Items[i].recypecontent}" id="editrecype-content">
+                <input class="form-item form-item-image" type="text" name="image" value="${Items[i].image}" placeholder="${Items[i].image}" id="editimage" accept="image/*">
                 <button id="summiteditform" onclick="Actualizar(${i},${cod})">Actualizar</button>
                 `
             addForm.appendChild(form2)
@@ -160,13 +160,6 @@ function editarelemento(cod){
         }
     }    
 }
-
-const btnsummiteditform = document.querySelector("#summiteditform")
-
-btnsummiteditform.addEventListener("click", (e) => {
-  e.preventDefault()
-}
-)
 
 const codigo=""
 const indexedit=""
@@ -198,7 +191,7 @@ function Actualizar(indexedit,codigo){
         difficulty: editdifficultyInput.value,
         description: editdescriptionInput.value,
         recypecontent: editrecypecontentInput.value,
-        image: editimageInput,
+        image: editimageInput.value,
         cod: codigo
       }
     );
