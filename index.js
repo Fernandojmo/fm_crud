@@ -26,7 +26,6 @@ function asignarcodigo(Codigo){
 }
 
 
-
 pintarItems(Items)
 
 function pintarItem(product) {
