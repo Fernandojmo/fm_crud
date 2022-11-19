@@ -8,7 +8,7 @@ function cargarls(){
                 type: "Postre",
                 difficulty: "Fácil",
                 description: "Muffin de vainillas con chips de chocolate",
-                recypecontent: "",
+                // recypecontent: "",
                 image: "https://images.unsplash.com/photo-1599394922679-1214f9ee16e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
                 cod: 0,
             },
@@ -16,7 +16,7 @@ function cargarls(){
                 type: "Postre",
                 difficulty: "Fácil",
                 description: "muffin relleno con crema de chocolate",
-                recypecontent: "",
+                // recypecontent: "",
                 image: "https://images.unsplash.com/photo-1609271873730-ed73bb15b9a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
                 cod: 1,
             },
@@ -25,7 +25,7 @@ function cargarls(){
                 type: "Postre",
                 difficulty: "Fácil",
                 description: "muffin relleno con arandanos",
-                recypecontent: "",
+                // recypecontent: "",
                 image: "https://images.unsplash.com/photo-1558303420-f814d8a590f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1965&q=80",
                 cod: 2,
             },
@@ -59,7 +59,7 @@ function pintaraddform(){
                     <input class="form-item form-item-type" type="text" name="type" placeholder="Tipo de receta" id="type">
                     <input class="form-item form-item-difficulty" type="text" name="difficulty" placeholder="Dificultad" id="difficulty">
                     <input class="form-item form-item-description" type="text" name="description" placeholder="Descripción" id="description">
-                    <input class="form-item form-item-recype" type="text" name="recype" placeholder="Receta" id="recype-content">
+                    <!-- <input class="form-item form-item-recype" type="text" name="recype" placeholder="Receta" id="recype-content"> -->
                     <input class="form-item form-item-image" type="text" name="image" placeholder="Link imagen" id="image" accept="image/*">
                     <button id="summitaddform"onclick>Subir</button>`
     addForm.appendChild(form)
@@ -100,7 +100,7 @@ function pintarItems(product) {
     const typeInput = document.querySelector("#type")
     const difficultyInput = document.querySelector("#difficulty")
     const descriptionInput = document.querySelector("#description")
-    const recypecontentInput = document.querySelector("#recype-content")
+    // const recypecontentInput = document.querySelector("#recype-content")
     const imageInput = document.querySelector("#image")
     const cod= ""
     if (
@@ -108,7 +108,7 @@ function pintarItems(product) {
         !typeInput.value ||
         !difficultyInput.value ||
         !descriptionInput.value ||
-        !recypecontentInput.value ||
+        // !recypecontentInput.value ||
         !imageInput.value
     ) {
       alert("Por favor rellenar todos los datos del formulario")
@@ -121,7 +121,7 @@ function pintarItems(product) {
       type: typeInput.value,
       difficulty: difficultyInput.value,
       description: descriptionInput.value,
-      recypecontent: recypecontentInput.value,
+    //   recypecontent: recypecontentInput.value,
       image: imageInput.value,
       cod: asignarcodigo()
     })
@@ -131,7 +131,7 @@ function pintarItems(product) {
     typeInput.value="" 
     difficultyInput.value="" 
     descriptionInput.value="" 
-    recypecontentInput.value="" 
+    // recypecontentInput.value="" 
     imageInput.value=""
   
     pintarItems(Items)
@@ -177,7 +177,7 @@ function editarelemento(cod){
                 <input class="form-item form-item-type" type="text" name="type" value="${Items[i].type}" placeholder="${Items[i].type}" id="edittype">
                 <input class="form-item form-item-difficulty" type="text" name="difficulty" value="${Items[i].difficulty}" placeholder="${Items[i].difficulty}" id="editdifficulty">
                 <input class="form-item form-item-description" type="text" name="description" value="${Items[i].description}" placeholder="${Items[i].description}" id="editdescription">
-                <input class="form-item form-item-recype" type="text" name="recype" value="${Items[i].recypecontent}" placeholder="${Items[i].recypecontent}" id="editrecype-content">
+                <!-- <input class="form-item form-item-recype" type="text" name="recype" value="${Items[i].recypecontent}" placeholder="${Items[i].recypecontent}" id="editrecype-content"> -->
                 <input class="form-item form-item-image" type="text" name="image" value="${Items[i].image}" placeholder="${Items[i].image}" id="editimage" accept="image/*">
                 <button id="summiteditform" onclick="Actualizar(${i},${cod})">Actualizar</button>
                 `
@@ -195,7 +195,7 @@ function Actualizar(indexedit,codigo){
     const edittypeInput = document.querySelector("#edittype")
     const editdifficultyInput = document.querySelector("#editdifficulty")
     const editdescriptionInput = document.querySelector("#editdescription")
-    const editrecypecontentInput = document.querySelector("#editrecype-content")
+    // const editrecypecontentInput = document.querySelector("#editrecype-content")
     const editimageInput = document.querySelector("#editimage")
 
     if (
@@ -203,7 +203,7 @@ function Actualizar(indexedit,codigo){
         !edittypeInput.value ||
         !editdifficultyInput.value ||
         !editdescriptionInput.value ||
-        !editrecypecontentInput.value ||
+        // !editrecypecontentInput.value ||
         !editimageInput.value
     ) {
       alert("Por favor rellenar todos los datos del formulario")
@@ -216,7 +216,7 @@ function Actualizar(indexedit,codigo){
         type: edittypeInput.value,
         difficulty: editdifficultyInput.value,
         description: editdescriptionInput.value,
-        recypecontent: editrecypecontentInput.value,
+        // recypecontent: editrecypecontentInput.value,
         image: editimageInput.value,
         cod: codigo
       }
