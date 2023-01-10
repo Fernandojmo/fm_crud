@@ -95,7 +95,9 @@ function pintarItems(product) {
 
 
   btnForm.addEventListener("click", (e) => {
+   console.log(e)
     e.preventDefault()
+  
     const titleInput = document.querySelector("#title")
     const typeInput = document.querySelector("#type")
     const difficultyInput = document.querySelector("#difficulty")
